@@ -13,10 +13,14 @@ void draw() {
             if((y == 0 || x == 0) || (y == FIELD_Y - 1 || x == FIELD_X - 1)) {
                 std::cout<<"#";
             }
+            else if(x == Player::posX && y == Player::posY) {
+                std::cout<<"*";
+            }
             else {
                 std::cout<<" ";
             }
         }
         std::cout<<std::endl;
     }
+    std::cout<<"X: "<<Player::posX<<" "<<"Y: "<<Player::posY;
 }
