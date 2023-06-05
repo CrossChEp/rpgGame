@@ -1,9 +1,9 @@
 //
 // Created by ander on 05.06.2023.
 //
-#include<string>
-#ifndef GAME_PLAYER_H
-#define GAME_PLAYER_H
+#include <string>
+#ifndef RPGGAME_PLAYER_H
+#define RPGGAME_PLAYER_H
 class Player {
 private:
     static void _moveRight();
@@ -16,5 +16,4 @@ public:
     static int posY;
     static void control();
 };
-
-#endif //GAME_PLAYER_H
+#endif //RPGGAME_PLAYER_H

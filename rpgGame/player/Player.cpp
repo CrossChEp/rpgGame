@@ -63,14 +63,14 @@ void Player::_moveUp() {
 }
 
 void Player::_moveDown() {
-    if(!_check(Y, PLUS)) {
+    if (!_check(Y, PLUS)) {
         posY = posY;
     } else {
         posY++;
     }
 }
 
-bool Player::_check(const std::string& coordType, const std::string& operation) {
+bool Player::_check(const std::string &coordType, const std::string &operation) {
     if(coordType == Y && operation == PLUS) {
         if(posY == FIELD_Y - 2) {
             return false;
