@@ -1,0 +1,9 @@
+# ninja log v5
+2	238	7076725728438840	CMakeFiles/game.dir/main.cpp.obj	39cc8484c261eb5e
+238	307	7076725729099644	game.exe	390b9b1128aec2b4
+6	237	7076716524226304	CMakeFiles/game.dir/field/Field.cpp.obj	593a76ad9deac0f7
+6	56	7076725726622145	CMakeFiles/game.dir/player/Player.cpp.obj	f82ecaee6f12c7cb
+10	70	7076731692735921	CMakeFiles/game.dir/player/Player.cpp.obj	2961192d9980dfb5
+3	258	7076731694622722	CMakeFiles/game.dir/main.cpp.obj	8344c448e5b77cee
+2	236	7076731794535643	CMakeFiles/game.dir/field/Field.cpp.obj	3da729fc1da34a3f
+236	303	7076731795184170	game.exe	390b9b1128aec2b4
