@@ -1,6 +1,7 @@
 //
 // Created by Oleg Andy on 05.06.2023.
 //
+#if defined(__APPLE__) || defined(__linux__) || defined(unix) || defined(__unix__) || defined(__unix)
 #include <sys/ioctl.h>
 #include <termios.h>
 #include <unistd.h>
@@ -35,3 +36,4 @@ int getch(void)
     tcsetattr( STDIN_FILENO, TCSANOW, &oldattr );
     return ch;
 }
+#endif
