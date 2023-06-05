@@ -10,7 +10,12 @@ private:
     static void _moveLeft();
     static void _moveUp();
     static void _moveDown();
+    static void _shootRight();
+    static void _shootLeft();
+    static void _shootUp();
+    static void _shootDown();
     static bool _check(const std::string& coordType, const std::string& operation);
+
 public:
     static int posX;
     static int posY;

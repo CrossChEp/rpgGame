@@ -4,14 +4,20 @@
 #include "Player.h"
 #include "../constants/Constants.h"
 #include "../field/Field.h"
+#include "../gun/Gun.h"
 #include <conio.h>
 #include <cstdlib>
 #include <string>
+#include <iostream>
 
 #define X "x"
 #define Y "y"
 #define PLUS "+"
 #define MINUS "-"
+#define BUL_X 1
+#define BUL_Y 2
+#define BUL_PLUS 1
+#define BUL_MINUS 2
 
 int Player::posX = FIELD_X  / 2;
 int Player::posY = FIELD_Y / 2;
@@ -33,6 +39,18 @@ void Player::control() {
                 break;
             case 'q':
                 system("pause");
+                break;
+            case 77:
+                _shootRight();
+                break;
+            case 75:
+                _shootLeft();
+                break;
+            case 72:
+                _shootUp();
+                break;
+            case 80:
+                _shootDown();
                 break;
         }
     }
@@ -93,3 +111,28 @@ bool Player::_check(const std::string &coordType, const std::string &operation) 
     }
     return true;
 }
+
+void Player::_shootRight() {
+    Gun::isActive = true;
+    Gun::coordType = BUL_X;
+    Gun::operation = BUL_PLUS;
+}
+
+void Player::_shootLeft() {
+    Gun::isActive = true;
+    Gun::coordType = BUL_X;
+    Gun::operation = BUL_MINUS;
+}
+
+void Player::_shootUp() {
+    Gun::isActive = true;
+    Gun::coordType = BUL_Y;
+    Gun::operation = BUL_MINUS;
+}
+
+void Player::_shootDown() {
+    Gun::isActive = true;
+    Gun::coordType = BUL_Y;
+    Gun::operation = BUL_PLUS;
+}
+
