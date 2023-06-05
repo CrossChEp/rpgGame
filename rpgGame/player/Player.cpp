@@ -5,7 +5,12 @@
 #include "../constants/Constants.h"
 #include "../field/Field.h"
 #include "../gun/Gun.h"
+#if defined _WIN32 || defined WIN64
 #include <conio.h>
+#else
+#include "../support_functions/Support.h"
+#endif
+#include <stdio.h>
 #include <cstdlib>
 #include <string>
 #include <iostream>
@@ -23,6 +28,7 @@ int Player::posX = FIELD_X  / 2;
 int Player::posY = FIELD_Y / 2;
 
 void Player::control() {
+#if defined _WIN32 || defined WIN64
     if(_kbhit()) {
         switch (_getch()) {
             case 'w':
@@ -54,7 +60,41 @@ void Player::control() {
                 break;
         }
     }
+#else
+    if(kbhit()) {
+        switch (getch()) {
+            case 'w':
+                _moveUp();
+                break;
+            case 'a':
+                _moveLeft();
+                break;
+            case 's':
+                _moveDown();
+                break;
+            case 'd':
+                _moveRight();
+                break;
+            case 'q':
+                system("pause");
+                break;
+            case 67:
+                _shootRight();
+                break;
+            case 68:
+                _shootLeft();
+                break;
+            case 65:
+                _shootUp();
+                break;
+            case 66:
+                _shootDown();
+                break;
+        }
+    }
+#endif
 }
+
 
 void Player::_moveRight() {
     if(!_check(X, PLUS)) {
