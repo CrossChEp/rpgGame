@@ -1,3 +1,0 @@
-C:/programming/c++/rpgGame/cmake-build-debug/CMakeFiles/game.dir
-C:/programming/c++/rpgGame/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/programming/c++/rpgGame/cmake-build-debug/CMakeFiles/rebuild_cache.dir
