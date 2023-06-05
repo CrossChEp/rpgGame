@@ -3,65 +3,93 @@
 //
 #include "Player.h"
 #include "../constants/Constants.h"
+#include "../field/Field.h"
 #include <conio.h>
 #include <cstdlib>
+#include <string>
 
-int Player::posX = 0;
-int Player::posY = 0;
+#define X "x"
+#define Y "y"
+#define PLUS "+"
+#define MINUS "-"
+
+int Player::posX = FIELD_X  / 2;
+int Player::posY = FIELD_Y / 2;
 
 void Player::control() {
     if(_kbhit()) {
         switch (_getch()) {
             case 'w':
-                posY++;
+                _moveUp();
                 break;
             case 'a':
-                posX--;
+                _moveLeft();
                 break;
             case 's':
-                posY--;
+                _moveDown();
                 break;
             case 'd':
-                posX++;
+                _moveRight();
+                break;
+            case 'q':
+                system("pause");
                 break;
         }
     }
 }
 
 void Player::_moveRight() {
-    if(!_check(true)) {
-        return;
+    if(!_check(X, PLUS)) {
+        posX = posX;
+    } else {
+        posX++;
     }
-    posX++;
 }
 
 void Player::_moveLeft() {
-    if(!_check(true)) {
-        return;
+    if(!_check(X, MINUS)) {
+        posX = posX;
+    } else {
+        posX--;
     }
-    posX--;
 }
 
 void Player::_moveUp() {
-    if(!_check(false)) {
-        return;
+    if(!_check(Y, MINUS)) {
+        posY = posY;
+    } else {
+        posY--;
     }
-    posY++;
 }
 
 void Player::_moveDown() {
-    if(!_check(false)) {
-        return;
+    if(!_check(Y, PLUS)) {
+        posY = posY;
+    } else {
+        posY++;
     }
-    posY--;
 }
 
-bool Player::_check(bool isX) {
-    if((isX && posX >= FIELD_X) || (isX && posX <= -FIELD_X)) {
-        return false;
+bool Player::_check(const std::string& coordType, const std::string& operation) {
+    if(coordType == Y && operation == PLUS) {
+        if(posY == FIELD_Y - 2) {
+            return false;
+        }
     }
-    if((isX && posY >= FIELD_Y) || (isX && posY <= -FIELD_Y)) {
-        return false;
+    if(coordType == Y && operation == MINUS) {
+        if(posY == 1) {
+            return false;
+        }
+    }
+    if(coordType == X && operation == PLUS) {
+        if(posX == FIELD_X - 3) {
+            return false;
+        }
+    }
+    if(coordType == X && operation == MINUS) {
+        if(posX == 2) {
+            return false;
+        }
     }
     return true;
 }

@@ -1,7 +1,7 @@
 //
 // Created by ander on 05.06.2023.
 //
-
+#include<string>
 #ifndef GAME_PLAYER_H
 #define GAME_PLAYER_H
 class Player {
@@ -10,7 +10,7 @@ private:
     static void _moveLeft();
     static void _moveUp();
     static void _moveDown();
-    static bool _check(bool isX);
+    static bool _check(const std::string& coordType, const std::string& operation);
 public:
     static int posX;
     static int posY;

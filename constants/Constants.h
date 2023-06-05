@@ -4,6 +4,6 @@
 
 #ifndef GAME_CONSTANTS_H
 #define GAME_CONSTANTS_H
-#define FIELD_X 20
-#define FIELD_Y 20
+#define FIELD_X 25
+#define FIELD_Y 25
 #endif //GAME_CONSTANTS_H

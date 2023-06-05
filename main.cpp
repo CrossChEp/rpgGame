@@ -1,10 +1,6 @@
-#include <iostream>
-#include "constants/Constants.h"
-#include "field/Field.h"
-using namespace std;
+#include "main_loop/MainLoop.h"
 
 int main() {
-    int a = 1;
-    cout<<-a;
+    mainLoop();
     return 0;
 }
